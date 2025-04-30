@@ -1,61 +1,105 @@
 <!-- Unit 12 Project
 Requirements
-[  ] $() Select by Element, ID AND Class 
-[  ] Use Three Different jQuery Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ yes ] $() Select by Element, ID AND Class 
+[ yes ] Use Three Different jQuery Methods 
+[ yes ] Add Five CSS Declarations
+[ yes ] Include Three Images
 
 Select ONE Additional 
-[ no ] Feature 1 - Use .addClass() method
+[ yes ] Feature 1 - Use .addClass() method
 [ no ] Feature 2 - Use a variable in javaScript 
 [ no ] Feature 3 - Use .mouseover() method
 [ no ] Feature 4 - Use .show() method
-[ no ] Feature 5 - Use .append() method
+[ yes ] Feature 5 - Use .append() method
 -->
-
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>Unit 12 Project</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="style.css" rel="stylesheet" ype="text/css" />
   </head>
   <body>
     <button id="mem1-button">Memory #1</button>
     <button id="mem2-button">Memory #2</button>
     <button id="mem3-button">Memory #3</button>
-    <h1>My Top 3 Memories of <span>This Year</span></h1>
+    <h1>My Top 3 Memories of <span>This year</span></h1>
     <ol>
       <li>
         <h3 id="mem1">Memory #1</h3>
-        <p>More about this memory.</p>
+        <img
+          id="mem1pic"
+          src="https://cdn.glitch.global/65e6d850-d870-4025-88c0-608f1df6216f/IMG_2104.jpg?v=1745843642661"
+          width="1"
+        />
+        <p id="memdesc1">More about this memory.</p>
       </li>
 
       <li>
         <h3 id="mem2">Memory #2</h3>
-        <p>More about this memory.</p>
+        <img
+          id="mem2pic"
+          src="https://cdn.glitch.global/65e6d850-d870-4025-88c0-608f1df6216f/IMG_0890.jpg?v=1745843725727"
+          width="1"
+        />
+        <p id="memdesc2">More about this memory.</p>
       </li>
 
       <li>
         <h3 id="mem3">Memory #3</h3>
-        <p>More about this memory</p>
+        <img
+          id="mem3pic"
+          src="https://cdn.glitch.global/65e6d850-d870-4025-88c0-608f1df6216f/IMG_0739.jpg?v=1745843765739"
+          width="1"
+        />
+        <p id="memdesc3">More about this memory</p>
       </li>
     </ol>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
+      $("img").addClass("memories");
+
       $("#mem1-button").click(function () {
-        $("#mem1").css("color", "purple");
+        $("#mem1").css("color", "blue");
+        $("#mem1").text("Greece Trip");
+        $("#memdesc1").html(
+          "Best memory from this year, probably even <em>the</em> best memory yet. I learned a great deal of history through the ancient architecture and museums in various places in Greece. I've formed numerous meaningful connections with peers and teachers who were also on the trip, nature, and culture. The views were stunning, the citizens of the towns we visited were very kind, and don't even get me started on the food. Absolutely delicious. Also, the hundreds of stray cats and dogs on the streets were so friendly and adorable, and I loved how the people living in the cities where the cats and dogs reside feed them regularly. Overall, just a wonderful experience. <em>I want to go back...</em>"
+        );
+        $("#mem1pic").css("width", "400");
       });
 
       $("#mem2-button").click(function () {
-        $("#mem2").css("color", "blue");
+        $("#mem2").css("color", "orange");
+        $("#mem2").text("AP Psychology Trip");
+        $("#memdesc2").html(
+          "The entire student body enrolled in AP Psychology visited the Museum of Natural History and spent the whole day exploring the museum and drawing. I walked around the museum with one of my friends, who also had the same AP Psych teacher as me, so we were both working on the same assignment. We had to take pictures of six different dinosaurs and insects and do these drawings called 'Daedal Doodles'. These doodles were intended to help us remember key terms for the upcoming AP exam. My friend and I sat down under the big whale for a while and just sketched the whole time. Very therapeutic."
+        );
+        $("#mem2pic").css("width", "400");
       });
 
       $("#mem3-button").click(function () {
-        $("#mem3").css("color", "green");
+        $("#mem3").css("color", "red");
+        $("#mem3").text("Rising Stars");
+        $("#memdesc3").text("I was in the opening and finale for Rising Stars. I had a solo! I had a lot of fun during this time, and that was important to me because the beginning of the year is often stressful. Rising Stars was basically a breath of fresh air.");
+        $("#mem3pic").css("width", "400");
       });
+
+      var newP = $("<p>");
+      newP.text(
+        "MEMORIES of 2025. Although the year isn't even halfway over, I have formed such great memories throughout the short months of the year. I wrote a paragraph for each memory... I was a little too sentimental... Press each memory button to reveal my top three memories of this year."
+      );
+         newP.addClass("memories");
+      
+      var newH1 = $("<h1>");
+      newH1.text("HOORAY! 🐈");
+      newH1.addClass("memories");
+
+      $("body").prepend(newP);
+      $("body").append(newH1);
+      
+            $(".memories").css("color", "green")
     </script>
   </body>
 </html>

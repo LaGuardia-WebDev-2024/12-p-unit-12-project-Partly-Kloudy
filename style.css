@@ -1,10 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Delius&family=Poetsen+One&display=swap");
 
-html {
-  background-color: white;
-  padding-left: 20px;
-}
-
 img{
   border-radius: 30px;
 }
@@ -12,3 +7,10 @@ img{
 h1 {
   font-family: "Poetsen One", sans-serif;
 }
+
+body {background-image: url(https://img.goodfon.com/wallpaper/big/b/ca/tekstura-fon-tsvetochki-flower-seamless-pattern-background.webp);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;}
+
+
